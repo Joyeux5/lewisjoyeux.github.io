@@ -1,0 +1,443 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"e7fb1b89a0",applicationID:"750147145"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="3D,animation,blender,Character,dark,fantasy,horror,Low Poly,movie,short film">
+      <meta name="description" content="Our quirky little 3d animation studio based in Glasgow Scotland">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="@AdobePortfolio">
+      <meta property="og:title" content="Ammonite - Let It Happen In The Background">
+      <meta property="og:description" content="Our quirky little 3d animation studio based in Glasgow Scotland">
+      <meta property="og:image" content="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/1ea1aa68-c19d-413b-9abc-13b5fd14d177_rwc_0x0x1920x1080x1920.png?h=f013c39388612bae6f5288c6bd54140c">
+        <link rel="icon" href="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/210ea698-a840-4bc5-8c13-2837f6a7a315_carw_1x1x32.png?h=776a864ad5c4587fc0e56d9d6955f099">
+      <link rel="stylesheet" href="dist/css/main.css" type="text/css">
+      <link rel="stylesheet" href="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/623aabe08c3e93f0330b312759624e091641896174.css?h=b4570bdc25edccd30ec8ddaf1c5f935b" type="text/css">
+    <link rel="canonical" href="let-it-happen-in-the-background.html">
+      <title>Ammonite - Let It Happen In The Background</title>
+    <script type="text/javascript" src="ik/rv3BhdUtzkcrn2mqEWXaEaXU63J-OL2qBIVCZYagmTjfenbffHYEBsJzwD9oFDIDWDmKZ2Jt52wDjQ6owQqoZebXZQqUjQZRFQ4RF2jUZQgRZQMkZQb3wDM-13I7OcBldAN0-Ws8jAoTdABX-AN0OcFzdP37OcuoSeNkieZzde8zOcFzdP37O1gkdDJlic88ikolpWgzS1scdh.js?cb=" async="" onload="
+    try {
+      window.Typekit.load();
+    } catch (e) {
+      console.warn('Typekit not loaded.');
+    }
+    "></script>
+</head>
+  <body class="transition-enabled">  <div class='page-background-video page-background-video-with-panel'>
+  </div>
+  <div class="js-responsive-nav">
+    <div class="responsive-nav has-social">
+      <div class="close-responsive-click-area js-close-responsive-nav">
+        <div class="close-responsive-button"></div>
+      </div>
+          <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+      <div class="page-title">
+        <a href="showreel.html">Showreel</a>
+      </div>
+                <div class="gallery-title"><a href="work.html">Work</a></div>
+      <div class="page-title">
+        <a href="about-me.html">About Us</a>
+      </div>
+      <div class="page-title">
+        <a href="contact.html">Contact</a>
+      </div>
+          </nav>
+        <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+          <ul>
+          </ul>
+        </div>
+    </div>
+  </div>
+    <header class="site-header js-site-header " data-context="theme.nav" data-hover-hint="nav" data-hover-hint-placement="top-start">
+        <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+      <div class="page-title">
+        <a href="showreel.html">Showreel</a>
+      </div>
+                <div class="gallery-title"><a href="work.html">Work</a></div>
+      <div class="page-title">
+        <a href="about-me.html">About Us</a>
+      </div>
+      <div class="page-title">
+        <a href="contact.html">Contact</a>
+      </div>
+        </nav>
+        <div class="logo-wrap" data-context="theme.logo.header" data-hover-hint="logo" data-hover-hint-placement="bottom-start">
+          <div class="logo e2e-site-logo-text logo-image  ">
+    <a href="home.html" class="image-normal image-link">
+      <img src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/e191f10b-5bad-4fea-8ae1-85c91d830c57_rwc_263x0x1990x1990x4096.png?h=47c7804a15af594ba3d08df2d9dd595b" alt="AMMONITE">
+    </a>
+          </div>
+        </div>
+        <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+          <ul>
+          </ul>
+        </div>
+        <div class="hamburger-click-area js-hamburger">
+          <div class="hamburger">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+    </header>
+    <div class="header-placeholder"></div>
+  <div class="site-wrap cfix js-site-wrap">
+    <div class="site-container">
+      <div class="site-content e2e-site-content">
+        <main>
+  <div class="page-container" data-context="page.page.container" data-hover-hint="pageContainer">
+    <section class="page standard-modules">
+        <header class="page-header content" data-context="pages" data-identity="id:p610a7ee807af331921ea7a0acf5bbddd67d08e9b42b27ae5c421d" data-hover-hint="pageHeader" data-hover-hint-id="p610a7ee807af331921ea7a0acf5bbddd67d08e9b42b27ae5c421d">
+            <h1 class="title preserve-whitespace e2e-site-logo-text">Let It Happen In The Background</h1>
+            <p class="description"></p>
+        </header>
+      <div class="page-content js-page-content" data-context="pages" data-identity="id:p610a7ee807af331921ea7a0acf5bbddd67d08e9b42b27ae5c421d">
+        <div id="project-canvas" class="js-project-modules modules content">
+          <div id="project-modules">
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="font-family:ftnk;font-weight:400;">We made this project with the intention of trying to create an animated sequence in this low poly style, testing out how we can create atmosphere and emotion with as little detail as possible. It was a thoroughly enjoyable process and hopefully, this is just the start of something bigger.</span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module embed project-module-embed js-js-project-module">
+  <div class="embed-dimensions" style="max-width: 1920px; max-height: 1080px; margin: 0 auto;">
+                 <div class="embed-aspect-ratio" style="padding-bottom: 56.25%; position: relative; height: 0;">
+                   <iframe src="video/582897933.html" frameborder="0" allowfullscreen="" style="position:absolute; top:0; left:0; width:100%; height:100%;" class="embed-content"></iframe>
+                 </div>
+               </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module media_collection project-module-media_collection" data-id="m610a7ee7db26e0349425facb6abb4942aff01f763743c4dadc7e6" style="padding-top: px;
+padding-bottom: px;
+">
+  <div class="grid--main js-grid-main" data-grid-max-images="
+  ">
+    <div class="grid__item-container js-grid-item-container" data-flex-grow="462.22222222222" style="width:462.22222222222px; flex-grow:462.22222222222;" data-width="1920" data-height="1080">
+      <script type="text/html" class="js-lightbox-slide-content">
+        <div class="grid__image-wrapper">
+          <img src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/2a4fac1f-be84-46a8-9a7e-1b28c734d7a2_rw_1920.png?h=9a16e8dc3c9df70f8123d282a243c280" srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/2a4fac1f-be84-46a8-9a7e-1b28c734d7a2_rw_600.png?h=39907d5ac7e75bdf1b76a711c5523096 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/2a4fac1f-be84-46a8-9a7e-1b28c734d7a2_rw_1200.png?h=0befe568a3452c76ccff5f1b0e646b12 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/2a4fac1f-be84-46a8-9a7e-1b28c734d7a2_rw_1920.png?h=9a16e8dc3c9df70f8123d282a243c280 1920w,"  sizes="(max-width: 1920px) 100vw, 1920px">
+        <div>
+      </script>
+      <img class="grid__item-image js-grid__item-image grid__item-image-lazy js-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/2a4fac1f-be84-46a8-9a7e-1b28c734d7a2_rw_1920.png?h=9a16e8dc3c9df70f8123d282a243c280" data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/2a4fac1f-be84-46a8-9a7e-1b28c734d7a2_rw_600.png?h=39907d5ac7e75bdf1b76a711c5523096 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/2a4fac1f-be84-46a8-9a7e-1b28c734d7a2_rw_1200.png?h=0befe568a3452c76ccff5f1b0e646b12 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/2a4fac1f-be84-46a8-9a7e-1b28c734d7a2_rw_1920.png?h=9a16e8dc3c9df70f8123d282a243c280 1920w,">
+      <span class="grid__item-filler" style="padding-bottom:56.25%;"></span>
+    </div>
+    <div class="grid__item-container js-grid-item-container" data-flex-grow="462.22222222222" style="width:462.22222222222px; flex-grow:462.22222222222;" data-width="1920" data-height="1080">
+      <script type="text/html" class="js-lightbox-slide-content">
+        <div class="grid__image-wrapper">
+          <img src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/1259ab33-b481-4a8c-a259-e4cc4db811a2_rw_1920.jpg?h=c56b22c706a942170f73545180036584" srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/1259ab33-b481-4a8c-a259-e4cc4db811a2_rw_600.jpg?h=255c5af6567d495f444c90254e999e4f 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/1259ab33-b481-4a8c-a259-e4cc4db811a2_rw_1200.jpg?h=90d9147b0eb5f64ea34a58612d67498d 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/1259ab33-b481-4a8c-a259-e4cc4db811a2_rw_1920.jpg?h=c56b22c706a942170f73545180036584 1920w,"  sizes="(max-width: 1920px) 100vw, 1920px">
+        <div>
+      </script>
+      <img class="grid__item-image js-grid__item-image grid__item-image-lazy js-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/1259ab33-b481-4a8c-a259-e4cc4db811a2_rw_1920.jpg?h=c56b22c706a942170f73545180036584" data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/1259ab33-b481-4a8c-a259-e4cc4db811a2_rw_600.jpg?h=255c5af6567d495f444c90254e999e4f 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/1259ab33-b481-4a8c-a259-e4cc4db811a2_rw_1200.jpg?h=90d9147b0eb5f64ea34a58612d67498d 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/1259ab33-b481-4a8c-a259-e4cc4db811a2_rw_1920.jpg?h=c56b22c706a942170f73545180036584 1920w,">
+      <span class="grid__item-filler" style="padding-bottom:56.25%;"></span>
+    </div>
+    <div class="grid__item-container js-grid-item-container" data-flex-grow="462.22222222222" style="width:462.22222222222px; flex-grow:462.22222222222;" data-width="1920" data-height="1080">
+      <script type="text/html" class="js-lightbox-slide-content">
+        <div class="grid__image-wrapper">
+          <img src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/68b2cf9c-07c8-4dc1-ac31-6ba29476fcac_rw_1920.png?h=0251db5d9fafa0f64a3c8b7238393760" srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/68b2cf9c-07c8-4dc1-ac31-6ba29476fcac_rw_600.png?h=6496392dd1e9fbf63e31da5ad7d602dc 600w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/68b2cf9c-07c8-4dc1-ac31-6ba29476fcac_rw_1200.png?h=753844caec87579e72ae10b13ff0571a 1200w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/68b2cf9c-07c8-4dc1-ac31-6ba29476fcac_rw_1920.png?h=0251db5d9fafa0f64a3c8b7238393760 1920w,"  sizes="(max-width: 1920px) 100vw, 1920px">
+        <div>
+      </script>
+      <img class="grid__item-image js-grid__item-image grid__item-image-lazy js-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/68b2cf9c-07c8-4dc1-ac31-6ba29476fcac_rw_1920.png?h=0251db5d9fafa0f64a3c8b7238393760" data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/68b2cf9c-07c8-4dc1-ac31-6ba29476fcac_rw_600.png?h=6496392dd1e9fbf63e31da5ad7d602dc 600w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/68b2cf9c-07c8-4dc1-ac31-6ba29476fcac_rw_1200.png?h=753844caec87579e72ae10b13ff0571a 1200w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/68b2cf9c-07c8-4dc1-ac31-6ba29476fcac_rw_1920.png?h=0251db5d9fafa0f64a3c8b7238393760 1920w,">
+      <span class="grid__item-filler" style="padding-bottom:56.25%;"></span>
+    </div>
+    <div class="grid__item-container js-grid-item-container" data-flex-grow="462.22222222222" style="width:462.22222222222px; flex-grow:462.22222222222;" data-width="1920" data-height="1080">
+      <script type="text/html" class="js-lightbox-slide-content">
+        <div class="grid__image-wrapper">
+          <img src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/43b04ed8-9e7f-4a47-8ad0-fe371632e95b_rw_1920.png?h=b92575731623f6a0f19becddc58c4d23" srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/43b04ed8-9e7f-4a47-8ad0-fe371632e95b_rw_600.png?h=772044e32a5162b1446266bf7a37e54b 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/43b04ed8-9e7f-4a47-8ad0-fe371632e95b_rw_1200.png?h=fa46e4803a9fd70dc853e19e1d15b650 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/43b04ed8-9e7f-4a47-8ad0-fe371632e95b_rw_1920.png?h=b92575731623f6a0f19becddc58c4d23 1920w,"  sizes="(max-width: 1920px) 100vw, 1920px">
+        <div>
+      </script>
+      <img class="grid__item-image js-grid__item-image grid__item-image-lazy js-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/43b04ed8-9e7f-4a47-8ad0-fe371632e95b_rw_1920.png?h=b92575731623f6a0f19becddc58c4d23" data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/43b04ed8-9e7f-4a47-8ad0-fe371632e95b_rw_600.png?h=772044e32a5162b1446266bf7a37e54b 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/43b04ed8-9e7f-4a47-8ad0-fe371632e95b_rw_1200.png?h=fa46e4803a9fd70dc853e19e1d15b650 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/43b04ed8-9e7f-4a47-8ad0-fe371632e95b_rw_1920.png?h=b92575731623f6a0f19becddc58c4d23 1920w,">
+      <span class="grid__item-filler" style="padding-bottom:56.25%;"></span>
+    </div>
+    <div class="grid__item-container js-grid-item-container" data-flex-grow="462.22222222222" style="width:462.22222222222px; flex-grow:462.22222222222;" data-width="1920" data-height="1080">
+      <script type="text/html" class="js-lightbox-slide-content">
+        <div class="grid__image-wrapper">
+          <img src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b92df630-51da-4493-a566-a2562702beb6_rw_1920.png?h=3004371c254f75aa489f2a728970bbf2" srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b92df630-51da-4493-a566-a2562702beb6_rw_600.png?h=83429c8fccce4eeee2b237a865cd3541 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b92df630-51da-4493-a566-a2562702beb6_rw_1200.png?h=2ca614b7201f91a7ac84fed0b3f1d3ce 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b92df630-51da-4493-a566-a2562702beb6_rw_1920.png?h=3004371c254f75aa489f2a728970bbf2 1920w,"  sizes="(max-width: 1920px) 100vw, 1920px">
+        <div>
+      </script>
+      <img class="grid__item-image js-grid__item-image grid__item-image-lazy js-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b92df630-51da-4493-a566-a2562702beb6_rw_1920.png?h=3004371c254f75aa489f2a728970bbf2" data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b92df630-51da-4493-a566-a2562702beb6_rw_600.png?h=83429c8fccce4eeee2b237a865cd3541 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b92df630-51da-4493-a566-a2562702beb6_rw_1200.png?h=2ca614b7201f91a7ac84fed0b3f1d3ce 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b92df630-51da-4493-a566-a2562702beb6_rw_1920.png?h=3004371c254f75aa489f2a728970bbf2 1920w,">
+      <span class="grid__item-filler" style="padding-bottom:56.25%;"></span>
+    </div>
+    <div class="grid__item-container js-grid-item-container" data-flex-grow="462.22222222222" style="width:462.22222222222px; flex-grow:462.22222222222;" data-width="1920" data-height="1080">
+      <script type="text/html" class="js-lightbox-slide-content">
+        <div class="grid__image-wrapper">
+          <img src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/d07dddf1-df21-4c89-af35-4e7944b9964d_rw_1920.png?h=87c29730e195ad1ab6bf23cb05465a65" srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/d07dddf1-df21-4c89-af35-4e7944b9964d_rw_600.png?h=10bb67426b9320df2f45213888c56e79 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/d07dddf1-df21-4c89-af35-4e7944b9964d_rw_1200.png?h=c514f38d6ebace448c93a9758f64fd45 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/d07dddf1-df21-4c89-af35-4e7944b9964d_rw_1920.png?h=87c29730e195ad1ab6bf23cb05465a65 1920w,"  sizes="(max-width: 1920px) 100vw, 1920px">
+        <div>
+      </script>
+      <img class="grid__item-image js-grid__item-image grid__item-image-lazy js-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/d07dddf1-df21-4c89-af35-4e7944b9964d_rw_1920.png?h=87c29730e195ad1ab6bf23cb05465a65" data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/d07dddf1-df21-4c89-af35-4e7944b9964d_rw_600.png?h=10bb67426b9320df2f45213888c56e79 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/d07dddf1-df21-4c89-af35-4e7944b9964d_rw_1200.png?h=c514f38d6ebace448c93a9758f64fd45 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/d07dddf1-df21-4c89-af35-4e7944b9964d_rw_1920.png?h=87c29730e195ad1ab6bf23cb05465a65 1920w,">
+      <span class="grid__item-filler" style="padding-bottom:56.25%;"></span>
+    </div>
+    <div class="js-grid-spacer"></div>
+  </div>
+</div>
+
+              
+              
+          </div>
+        </div>
+      </div>
+    </section>
+          <section class="other-projects" data-context="page.page.other_pages" data-hover-hint="otherPages">
+            <div class="title-wrapper">
+              <div class="title-container">
+                  <h3 class="other-projects-title preserve-whitespace">You may also like</h3>
+              </div>
+            </div>
+            <div class="project-covers">
+                  <a class="project-cover js-project-cover-touch hold-space" href="virus-concepts.html" data-context="pages" data-identity="id:p5e58ed6e3b56f26a468b2d7125458a6abf3e07d314e70cff1b427">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/a567d6b9-2601-45dd-9884-1c1aa17a2569_carw_16x9x32.png?h=2856414af943c1625a5272fc73b1a123" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/a567d6b9-2601-45dd-9884-1c1aa17a2569_car_16x9.png?h=899509de89431bc1549a9d6889ad3d99" data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/a567d6b9-2601-45dd-9884-1c1aa17a2569_carw_16x9x640.png?h=4c49be49ef86f7aecd802ffca799f23b 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/a567d6b9-2601-45dd-9884-1c1aa17a2569_carw_16x9x1280.png?h=acdb249ba4570a16502675b6b54f201c 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/a567d6b9-2601-45dd-9884-1c1aa17a2569_carw_16x9x1366.png?h=33497300b49d873ddeca3e934e9801c7 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/a567d6b9-2601-45dd-9884-1c1aa17a2569_carw_16x9x1920.png?h=c74fa88ceb16e6c1cc6f1aa68daf7374 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/a567d6b9-2601-45dd-9884-1c1aa17a2569_carw_16x9x2560.png?h=ccd23d031ce5ee1b0edb1e2ca9eb6ae7 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/a567d6b9-2601-45dd-9884-1c1aa17a2569_carw_16x9x5120.png?h=4d5d680e73fbbd6c129c824a1ea43f65 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Virus Concepts</div>
+                              <div class="date">2020</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="natural-motion-intern-program.html" data-context="pages" data-identity="id:p603f86d99d9199b7148e260d74b1fc9ba663fa50a4ad3b7113f6b">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/4c2217a7-06ea-4b64-9223-8239a01b18fa_carw_16x9x32.png?h=df75a276113e1bef78229c25d5e52204" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/4c2217a7-06ea-4b64-9223-8239a01b18fa_car_16x9.png?h=cbc8534f93de1cca33f647be36f9a616" data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/4c2217a7-06ea-4b64-9223-8239a01b18fa_carw_16x9x640.png?h=1aff4ec410fbe5fd9e6f8d3de304e9c3 640w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/4c2217a7-06ea-4b64-9223-8239a01b18fa_carw_16x9x1280.png?h=2d99a951a934f3d3b8a2810487fcc9d5 1280w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/4c2217a7-06ea-4b64-9223-8239a01b18fa_carw_16x9x1366.png?h=dbf152ec2c4f47872a1d46892e820c7a 1366w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/4c2217a7-06ea-4b64-9223-8239a01b18fa_carw_16x9x1920.png?h=a72d7f8b058e29d84328147fccb403c7 1920w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/4c2217a7-06ea-4b64-9223-8239a01b18fa_carw_16x9x2560.png?h=9c17c07ca8a88db96fc619f9107a7616 2560w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/4c2217a7-06ea-4b64-9223-8239a01b18fa_carw_16x9x5120.png?h=f05ae8746b1a820191360bfd7bf05d44 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Natural Motion Intern Program</div>
+                              <div class="date">2021</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="ammonite-christmas-2021.html" data-context="pages" data-identity="id:p61d2ddcdef7c2bf9983b92279b5764181d7beaab75cfe11e21108">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/e83131ab-c2c3-4525-baed-5c81cacbf92a_carw_16x9x32.jpg?h=db46a82bc5e9f79f6a6ad5dae8f5ac41" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/e83131ab-c2c3-4525-baed-5c81cacbf92a_car_16x9.jpg?h=8a7545b12408720037394383df186524" data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/e83131ab-c2c3-4525-baed-5c81cacbf92a_carw_16x9x640.jpg?h=76e89ae3e10da4b0a27261615a6ccb99 640w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/e83131ab-c2c3-4525-baed-5c81cacbf92a_carw_16x9x1280.jpg?h=091884829d1b95c7ded589db631ae620 1280w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/e83131ab-c2c3-4525-baed-5c81cacbf92a_carw_16x9x1366.jpg?h=98d94055f11e2eb4b16d1a2b2c4e543c 1366w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/e83131ab-c2c3-4525-baed-5c81cacbf92a_carw_16x9x1920.jpg?h=1014e0c2ff717b9441205a4fc85ce36a 1920w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/e83131ab-c2c3-4525-baed-5c81cacbf92a_carw_16x9x2560.jpg?h=6d850caa2a05f4ed207ca49f1c5722c4 2560w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/e83131ab-c2c3-4525-baed-5c81cacbf92a_carw_16x9x5120.jpg?h=ea548dd2bc49911f951d9011e9ddcea9 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Ammonite Christmas 2021</div>
+                              <div class="date">2022</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="papa-johns-christmas-advert-2019.html" data-context="pages" data-identity="id:p5dde8ae086f727be458a97b858c6a9616ba96862e945c6728af0f">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x32.png?h=c97efe3352780d5e16b25f5ef3240264" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_car_16x9.png?h=d850defece2547b1b4e21ae8904c79d2" data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x640.png?h=418e6f984c60e29c7d9a98906c5d2c71 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x1280.png?h=f6ac8338c491a4e8c22a245ab671c9b5 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x1366.png?h=6a86d45915d5fd6667056d4eb617bf3c 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x1920.png?h=c98a3bffc93d0083c2cd3867936a557b 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x2560.png?h=8af16cb4b06a060e2cc490cd19e9b463 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x5120.png?h=b921b8b0491ddbac5baad5f17c16dca2 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Papa John's Christmas Advert 2019</div>
+                              <div class="date">2019</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="between-you-and-me-music-video.html" data-context="pages" data-identity="id:p5d2457ef68a39e2ec5482d4486ad625ecd0c6a01fc2d318a7cb32">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x32.png?h=4b520754c0d0719da58d4acb1d10c991" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_car_16x9.png?h=a2dd3cb1b5d996652d882b52605ca34d" data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x640.png?h=66d28b5850afbd5cdf68ccbc9f973684 640w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x1280.png?h=aea347b5143f896017b41974288c4166 1280w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x1366.png?h=80dbcba5d21802848041783d6a496c98 1366w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x1920.png?h=10944bd94f54388266e01ac6310ba536 1920w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x2560.png?h=bfb496979d962d0ba190f990261e0141 2560w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x5120.png?h=05636f4d72d5aac1b5c48b65f057edb7 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Between You and Me (Music Video)</div>
+                              <div class="date">2019</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="lemon-house.html" data-context="pages" data-identity="id:p5f2a69e039bd3a0d63c26d2de9e7e6eacc0246a382ce01e79e0af">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/181fdb3d-d060-4af1-98e3-12c0f9249415_carw_16x9x32.jpg?h=62b0167298180aec13a1ed908ffa17ca" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/181fdb3d-d060-4af1-98e3-12c0f9249415_car_16x9.jpg?h=1f4e8f2e37e67482c43c3b839ab72d46" data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/181fdb3d-d060-4af1-98e3-12c0f9249415_carw_16x9x640.jpg?h=1a2cd88d6be2389db6d48e97f9d31de9 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/181fdb3d-d060-4af1-98e3-12c0f9249415_carw_16x9x1280.jpg?h=1e19d934be148bf2f0d0356971c90dca 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/181fdb3d-d060-4af1-98e3-12c0f9249415_carw_16x9x1366.jpg?h=cf73d530614439b208562e00c7dc742d 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/181fdb3d-d060-4af1-98e3-12c0f9249415_carw_16x9x1920.jpg?h=5e2a46b9991fd108b2797ddb89d058fb 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/181fdb3d-d060-4af1-98e3-12c0f9249415_carw_16x9x2560.jpg?h=57dfb93508a772526135d632d9c1e9cb 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/181fdb3d-d060-4af1-98e3-12c0f9249415_carw_16x9x5120.jpg?h=4128f4edc57c210ac5bcc5082d76e6f2 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Lemon House</div>
+                              <div class="date">2020</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="ikea-is-run-by-mimics.html" data-context="pages" data-identity="id:p5e58e748dd2f10aabd5d45b16907699c1d9b1353960c3639d867f">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/3c81cfa9-c2b1-4368-8d7b-1d507da67f40_carw_16x9x32.png?h=0ce8681f3519ce909b321251cb1d6b05" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/3c81cfa9-c2b1-4368-8d7b-1d507da67f40_car_16x9.png?h=9fdabbcc01693a9a6f21d7965e9848ac" data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/3c81cfa9-c2b1-4368-8d7b-1d507da67f40_carw_16x9x640.png?h=039e577ffc9b90151d992c29516e954d 640w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/3c81cfa9-c2b1-4368-8d7b-1d507da67f40_carw_16x9x1280.png?h=1f553f7ac75b341087a65bd40ac03973 1280w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/3c81cfa9-c2b1-4368-8d7b-1d507da67f40_carw_16x9x1366.png?h=124a11c2785f75fd225ea0ffc39cae85 1366w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/3c81cfa9-c2b1-4368-8d7b-1d507da67f40_carw_16x9x1920.png?h=e0cc8c4dbb016f57ae91683adbcbd4fc 1920w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/3c81cfa9-c2b1-4368-8d7b-1d507da67f40_carw_16x9x2560.png?h=faa8c9062430f4be887fd93d51b437f3 2560w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/3c81cfa9-c2b1-4368-8d7b-1d507da67f40_carw_16x9x5120.png?h=a86669d98746da2a92e98d8a7edcf2a5 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Ikea is Run by Mimics</div>
+                              <div class="date">2020</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="anthem-helmet-build-1.html" data-context="pages" data-identity="id:p5d2494c15de1e334f4b310d59efa3f4dbb85c37e6bf641a50a529">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/cd81f833-58ca-4b5d-ad62-4800d4541d6e_carw_16x9x32.jpg?h=fe0deb2b4c7b9a519b719c603ad96dab" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/cd81f833-58ca-4b5d-ad62-4800d4541d6e_car_16x9.jpg?h=e7f0fe7ab75653fdebbbb2a3d9d52288" data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/cd81f833-58ca-4b5d-ad62-4800d4541d6e_carw_16x9x640.jpg?h=f2ebdeaabaa0d46c1b5a8573f4e35b99 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/cd81f833-58ca-4b5d-ad62-4800d4541d6e_carw_16x9x1280.jpg?h=18797fd6a9865ab2b196af9a5f3d8b5c 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/cd81f833-58ca-4b5d-ad62-4800d4541d6e_carw_16x9x1366.jpg?h=ca443fd9868b9a24dacade3d0819bb6c 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/cd81f833-58ca-4b5d-ad62-4800d4541d6e_carw_16x9x1920.jpg?h=c909b8bb155215d3f8a63dc7a362c723 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/cd81f833-58ca-4b5d-ad62-4800d4541d6e_carw_16x9x2560.jpg?h=393283e24fe75440ca9435ec1e4fb551 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/cd81f833-58ca-4b5d-ad62-4800d4541d6e_carw_16x9x5120.jpg?h=e393d263ca6a9a8e0aa4581e2c54bc7c 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Anthem Helmet Build</div>
+                              <div class="date">2019</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="mesh-performance-management.html" data-context="pages" data-identity="id:p61c2f4ad39ea38a272d2bd4f48f36311160ddaff64a1bfd42c078">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/16dfc3b7-eee0-49d8-9763-dada83b15df1_carw_16x9x32.jpg?h=e810e5627f2318544d5e08dc2acd1536" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/16dfc3b7-eee0-49d8-9763-dada83b15df1_car_16x9.jpg?h=f93130107384efba854518fb946c7892" data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/16dfc3b7-eee0-49d8-9763-dada83b15df1_carw_16x9x640.jpg?h=39165983897341751fc00534b0dd4bba 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/16dfc3b7-eee0-49d8-9763-dada83b15df1_carw_16x9x1280.jpg?h=4b7c5685eee8304f36159c16dd37ead5 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/16dfc3b7-eee0-49d8-9763-dada83b15df1_carw_16x9x1366.jpg?h=dd1bfd1030a9018eb8b0f91a0e67351c 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/16dfc3b7-eee0-49d8-9763-dada83b15df1_carw_16x9x1920.jpg?h=2b92ea12c582069928b6c5cafd2bd049 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/16dfc3b7-eee0-49d8-9763-dada83b15df1_carw_16x9x2560.jpg?h=99ddbc5ff98dbc4cb72aab342aeec867 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/16dfc3b7-eee0-49d8-9763-dada83b15df1_carw_16x9x5120.jpg?h=f2f00d86fb6336e939889696ca1609d9 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Mesh: Performance Management</div>
+                              <div class="date">2021</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="sushi.html" data-context="pages" data-identity="id:p5f32ad297ac8b9ebca259f87075b0567ba0c2c72a0396d0e89ea5">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/5150f1bf-b623-4ea5-88e6-681b0494927b_carw_16x9x32.jpg?h=7748d74a957d3c0b4e626c2600e058b1" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/5150f1bf-b623-4ea5-88e6-681b0494927b_car_16x9.jpg?h=ba7b54a3a163642a285a4fada45e991b" data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/5150f1bf-b623-4ea5-88e6-681b0494927b_carw_16x9x640.jpg?h=a12e2e5635e758e6f76203430d75432f 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/5150f1bf-b623-4ea5-88e6-681b0494927b_carw_16x9x1280.jpg?h=012f5ba6c2a9eef479e5a88ea17027d2 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/5150f1bf-b623-4ea5-88e6-681b0494927b_carw_16x9x1366.jpg?h=f1b7e8515709c0911e01dc99a51c38a3 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/5150f1bf-b623-4ea5-88e6-681b0494927b_carw_16x9x1920.jpg?h=bf981c5d3ce884b696948d0868870141 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/5150f1bf-b623-4ea5-88e6-681b0494927b_carw_16x9x2560.jpg?h=21bb7e0a36b42b5884cf108fbfebfe75 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/5150f1bf-b623-4ea5-88e6-681b0494927b_carw_16x9x5120.jpg?h=532b591364b8db499ae779e8b3cabc15 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Sushi</div>
+                              <div class="date">2020</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+            </div>
+          </section>
+        <section class="back-to-top" data-hover-hint="backToTop">
+          <a href="#"><span class="arrow">&uarr;</span><span class="preserve-whitespace">Back to Top</span></a>
+        </section>
+        <a class="back-to-top-fixed js-back-to-top back-to-top-fixed-with-panel" data-hover-hint="backToTop" data-hover-hint-placement="top-start" href="#">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" class="icon icon-back-to-top">
+          <g>
+            <path d="M13.8,1.3L21.6,9c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4c-0.1,0.1-0.1,0.3-0.3,0.4
+              c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.3,0.1-0.4,0.1c-0.1,0-0.3,0-0.4-0.1c-0.2-0.1-0.3-0.2-0.4-0.3L14.2,5l0,19.1
+              c0,0.2-0.1,0.3-0.1,0.5c0,0.1-0.1,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.1,0.1-0.3,0.1-0.5,0.1c-0.1,0-0.3,0-0.4-0.1
+              c-0.1-0.1-0.3-0.1-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4c-0.1-0.1-0.1-0.3-0.1-0.5l0-19.1l-5.7,5.7C6,10.8,5.8,10.9,5.7,11
+              c-0.1,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3,0-0.4-0.1c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.1-0.2-0.2-0.4C4.1,10.2,4,10.1,4.1,9.9
+              c0-0.1,0-0.3,0.1-0.4c0-0.1,0.1-0.3,0.3-0.4l7.7-7.8c0.1,0,0.2-0.1,0.2-0.1c0,0,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.2-0.1
+              c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1C13.7,1.2,13.8,1.2,13.8,1.3z"></path>
+          </g>
+          </svg>
+        </a>
+  </div>
+        </main>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e7fb1b89a0","applicationID":"750147145","transactionName":"ZwZaYkJVDERXUxULCV5Me0NDQA1aGWsmJzJtQxdtS0QDQ14KT0gbbQ==","queueTime":0,"applicationTime":14,"atts":"S0FNFApPHxsUUUNYHU0e","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">
+  // fix for Safari's back/forward cache
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+  <script type="text/javascript">var __config__ = {"page_id":"p610a7ee807af331921ea7a0acf5bbddd67d08e9b42b27ae5c421d","theme":{"name":"marta\/ludwig"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":true,"color":{"opacity":0.94,"hex":"#fff"}},"cookie_banner":{"enabled":false}};</script>
+  <script type="text/javascript" src="site/translations.js?cb="></script>
+  <script type="text/javascript" src="dist/js/main.js?cb="></script>
+</html>

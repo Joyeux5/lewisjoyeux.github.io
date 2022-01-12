@@ -1,0 +1,371 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"e7fb1b89a0",applicationID:"750147145"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="animation,3D,animator,Ammonite,VFX,Game Tralier,blender,motion grpahics,character,design">
+      <meta name="description" content="Our quirky little 3d animation studio based in Glasgow Scotland">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="@AdobePortfolio">
+      <meta property="og:title" content="Ammonite - Lemon House">
+      <meta property="og:description" content="Our quirky little 3d animation studio based in Glasgow Scotland">
+      <meta property="og:image" content="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/1ea1aa68-c19d-413b-9abc-13b5fd14d177_rwc_0x0x1920x1080x1920.png?h=f013c39388612bae6f5288c6bd54140c">
+        <link rel="icon" href="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/210ea698-a840-4bc5-8c13-2837f6a7a315_carw_1x1x32.png?h=776a864ad5c4587fc0e56d9d6955f099">
+      <link rel="stylesheet" href="dist/css/main.css" type="text/css">
+      <link rel="stylesheet" href="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/717829a48b5fad64747b7bf2f577ae731641896174.css?h=86cdb6a8a0df5923f33a76d8a0fbe5df" type="text/css">
+    <link rel="canonical" href="lemon-house.html">
+      <title>Ammonite - Lemon House</title>
+    <script type="text/javascript" src="ik/rv3BhdUtzkcrn2mqEWXaEaXU63J-OL2qBIVCZYagmTjfenbffHYEBsJzwD9oFDIDWDmKZ2Jt52wDjQ6owQqoZebXZQqUjQZRFQ4RF2jUZQgRZQMkZQb3wDM-13I7OcBldAN0-Ws8jAoTdABX-AN0OcFzdP37OcuoSeNkieZzde8zOcFzdP37O1gkdDJlic88ikolpWgzS1scdh.js?cb=" async="" onload="
+    try {
+      window.Typekit.load();
+    } catch (e) {
+      console.warn('Typekit not loaded.');
+    }
+    "></script>
+</head>
+  <body class="transition-enabled">  <div class='page-background-video page-background-video-with-panel'>
+  </div>
+  <div class="js-responsive-nav">
+    <div class="responsive-nav has-social">
+      <div class="close-responsive-click-area js-close-responsive-nav">
+        <div class="close-responsive-button"></div>
+      </div>
+          <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+      <div class="page-title">
+        <a href="showreel.html">Showreel</a>
+      </div>
+                <div class="gallery-title"><a href="work.html">Work</a></div>
+      <div class="page-title">
+        <a href="about-me.html">About Us</a>
+      </div>
+      <div class="page-title">
+        <a href="contact.html">Contact</a>
+      </div>
+          </nav>
+        <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+          <ul>
+          </ul>
+        </div>
+    </div>
+  </div>
+    <header class="site-header js-site-header " data-context="theme.nav" data-hover-hint="nav" data-hover-hint-placement="top-start">
+        <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+      <div class="page-title">
+        <a href="showreel.html">Showreel</a>
+      </div>
+                <div class="gallery-title"><a href="work.html">Work</a></div>
+      <div class="page-title">
+        <a href="about-me.html">About Us</a>
+      </div>
+      <div class="page-title">
+        <a href="contact.html">Contact</a>
+      </div>
+        </nav>
+        <div class="logo-wrap" data-context="theme.logo.header" data-hover-hint="logo" data-hover-hint-placement="bottom-start">
+          <div class="logo e2e-site-logo-text logo-image  ">
+    <a href="home.html" class="image-normal image-link">
+      <img src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/e191f10b-5bad-4fea-8ae1-85c91d830c57_rwc_263x0x1990x1990x4096.png?h=47c7804a15af594ba3d08df2d9dd595b" alt="AMMONITE">
+    </a>
+          </div>
+        </div>
+        <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+          <ul>
+          </ul>
+        </div>
+        <div class="hamburger-click-area js-hamburger">
+          <div class="hamburger">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+    </header>
+    <div class="header-placeholder"></div>
+  <div class="site-wrap cfix js-site-wrap">
+    <div class="site-container">
+      <div class="site-content e2e-site-content">
+        <main>
+  <div class="page-container" data-context="page.page.container" data-hover-hint="pageContainer">
+    <section class="page standard-modules">
+        <header class="page-header content" data-context="pages" data-identity="id:p5f2a69e039bd3a0d63c26d2de9e7e6eacc0246a382ce01e79e0af" data-hover-hint="pageHeader" data-hover-hint-id="p5f2a69e039bd3a0d63c26d2de9e7e6eacc0246a382ce01e79e0af">
+            <h1 class="title preserve-whitespace e2e-site-logo-text">Lemon House</h1>
+            <p class="description"></p>
+        </header>
+      <div class="page-content js-page-content" data-context="pages" data-identity="id:p5f2a69e039bd3a0d63c26d2de9e7e6eacc0246a382ce01e79e0af">
+        <div id="project-canvas" class="js-project-modules modules content">
+          <div id="project-modules">
+              
+              
+              
+              
+              <div class="project-module module embed project-module-embed js-js-project-module">
+  <div class="embed-dimensions" style="max-width: 1920px; max-height: 1080px; margin: 0 auto;">
+                 <div class="embed-aspect-ratio" style="padding-bottom: 56.25%; position: relative; height: 0;">
+                   <iframe src="video/444808019.html" frameborder="0" allowfullscreen="" style="position:absolute; top:0; left:0; width:100%; height:100%;" class="embed-content"></iframe>
+                 </div>
+               </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="font-family:ftnk;font-weight:400;">The Nationals Matt Berninger and his brother Tom have started the production studio Lemon House. We had the pleasure of designing the logo animation that will come before all of their films.</span></div></div>
+</div>
+
+              
+              
+              
+              
+          </div>
+        </div>
+      </div>
+    </section>
+          <section class="other-projects" data-context="page.page.other_pages" data-hover-hint="otherPages">
+            <div class="title-wrapper">
+              <div class="title-container">
+                  <h3 class="other-projects-title preserve-whitespace">You may also like</h3>
+              </div>
+            </div>
+            <div class="project-covers">
+                  <a class="project-cover js-project-cover-touch hold-space" href="let-it-happen-in-the-background.html" data-context="pages" data-identity="id:p610a7ee807af331921ea7a0acf5bbddd67d08e9b42b27ae5c421d">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/86320999-fbb8-49b3-856d-bdfac04a5229_rwc_0x0x1916x1080x32.png?h=c1199e5b80e91ed210c8a5673f40d544" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/86320999-fbb8-49b3-856d-bdfac04a5229_rwc_0x0x1916x1080x1916.png?h=9e539d57ffa06f96917cb46feef459f9" data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/86320999-fbb8-49b3-856d-bdfac04a5229_rwc_0x0x1916x1080x640.png?h=7e1e7240a56792a70b249c980e37a44b 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/86320999-fbb8-49b3-856d-bdfac04a5229_rwc_0x0x1916x1080x1280.png?h=8aef708d9fa4a419347a4b4704056b8d 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/86320999-fbb8-49b3-856d-bdfac04a5229_rwc_0x0x1916x1080x1366.png?h=f98190664de99827c612e715ab1353c3 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/86320999-fbb8-49b3-856d-bdfac04a5229_rwc_0x0x1916x1080x1920.png?h=a3d003b88fdf7274808740b429d4ee2e 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/86320999-fbb8-49b3-856d-bdfac04a5229_rwc_0x0x1916x1080x1916.png?h=9e539d57ffa06f96917cb46feef459f9 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/86320999-fbb8-49b3-856d-bdfac04a5229_rwc_0x0x1916x1080x1916.png?h=9e539d57ffa06f96917cb46feef459f9 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Let It Happen In The Background</div>
+                              <div class="date">2021</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="ammonite-2022-showreel.html" data-context="pages" data-identity="id:p61dd58b162e16ffb65eccbe501bb04922e4c53668e088f39dbb2a">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/548988ae-3ce2-47f2-ae33-a00cac6781ef_carw_16x9x32.png?h=e6a35e32ed70aab6bcfa4d597fad1f03" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/548988ae-3ce2-47f2-ae33-a00cac6781ef_car_16x9.png?h=346901ec01d375aaf4ac030c806d360e" data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/548988ae-3ce2-47f2-ae33-a00cac6781ef_carw_16x9x640.png?h=9ecbbe87eb2fb6675980f1da81ba3739 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/548988ae-3ce2-47f2-ae33-a00cac6781ef_carw_16x9x1280.png?h=72d8ce6703cb36f0b3f67de0e706f09f 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/548988ae-3ce2-47f2-ae33-a00cac6781ef_carw_16x9x1366.png?h=b61d8225da7474151a38ab75d6d30c84 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/548988ae-3ce2-47f2-ae33-a00cac6781ef_carw_16x9x1920.png?h=0d0c0f3167992a034a30f02482c7109e 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/548988ae-3ce2-47f2-ae33-a00cac6781ef_carw_16x9x2560.png?h=40a363e6d714e448e96d9d35959cb2e4 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/548988ae-3ce2-47f2-ae33-a00cac6781ef_carw_16x9x5120.png?h=ba454c798cf5a0b4d976296248df9f87 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Ammonite 2022 Showreel</div>
+                              <div class="date">2022</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="enemy-on-board-cinematic-game-trailer.html" data-context="pages" data-identity="id:p5db1a379cbede31c1ce1cb43416bc17da7b19e18ba4d0a23b4eb3">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/c609616b-0d42-4fa3-b771-29c945e96ed3_carw_16x9x32.png?h=07ba2db9e643c6133db3d51f1524da70" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/c609616b-0d42-4fa3-b771-29c945e96ed3_car_16x9.png?h=14fe8939ab467e3df01544318b9118a6" data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/c609616b-0d42-4fa3-b771-29c945e96ed3_carw_16x9x640.png?h=86d474daa7237a9c7155b28e71b5d26a 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/c609616b-0d42-4fa3-b771-29c945e96ed3_carw_16x9x1280.png?h=d39e1a5f9ee303239eb777f8ac14900a 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/c609616b-0d42-4fa3-b771-29c945e96ed3_carw_16x9x1366.png?h=2b545d15870bcc256a53ff51b9b1a1a7 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/c609616b-0d42-4fa3-b771-29c945e96ed3_carw_16x9x1920.png?h=f7a47dea3bedfa0f465d505ad157289c 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/c609616b-0d42-4fa3-b771-29c945e96ed3_carw_16x9x2560.png?h=054a3b5169f57f17a7a4900a39a6ab9a 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/c609616b-0d42-4fa3-b771-29c945e96ed3_carw_16x9x5120.png?h=d3c4e584b4a64b2e5afb01d039162aec 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Enemy on Board - Cinematic Game Trailer</div>
+                              <div class="date">2019</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="papa-johns-christmas-advert-2019.html" data-context="pages" data-identity="id:p5dde8ae086f727be458a97b858c6a9616ba96862e945c6728af0f">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x32.png?h=c97efe3352780d5e16b25f5ef3240264" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_car_16x9.png?h=d850defece2547b1b4e21ae8904c79d2" data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x640.png?h=418e6f984c60e29c7d9a98906c5d2c71 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x1280.png?h=f6ac8338c491a4e8c22a245ab671c9b5 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x1366.png?h=6a86d45915d5fd6667056d4eb617bf3c 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x1920.png?h=c98a3bffc93d0083c2cd3867936a557b 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x2560.png?h=8af16cb4b06a060e2cc490cd19e9b463 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/b6f113f2-4b6c-45ba-9455-f842c3a265aa_carw_16x9x5120.png?h=b921b8b0491ddbac5baad5f17c16dca2 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Papa John's Christmas Advert 2019</div>
+                              <div class="date">2019</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="between-you-and-me-music-video.html" data-context="pages" data-identity="id:p5d2457ef68a39e2ec5482d4486ad625ecd0c6a01fc2d318a7cb32">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x32.png?h=4b520754c0d0719da58d4acb1d10c991" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_car_16x9.png?h=a2dd3cb1b5d996652d882b52605ca34d" data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x640.png?h=66d28b5850afbd5cdf68ccbc9f973684 640w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x1280.png?h=aea347b5143f896017b41974288c4166 1280w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x1366.png?h=80dbcba5d21802848041783d6a496c98 1366w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x1920.png?h=10944bd94f54388266e01ac6310ba536 1920w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x2560.png?h=bfb496979d962d0ba190f990261e0141 2560w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/6182c4c5-a637-4004-a162-39ea89861416_carw_16x9x5120.png?h=05636f4d72d5aac1b5c48b65f057edb7 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Between You and Me (Music Video)</div>
+                              <div class="date">2019</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="animate-in.html" data-context="pages" data-identity="id:p5f157107c783dc7ffe1977a421569cdb6864268275486e7659662">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/167a1d70-4aad-4ca0-9ba4-40f253ee1193_carw_16x9x32.png?h=a512bbbc1fe372689a3c8c51c01a66d7" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/167a1d70-4aad-4ca0-9ba4-40f253ee1193_car_16x9.png?h=921f22d904baa8b49dd991c79c10d411" data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/167a1d70-4aad-4ca0-9ba4-40f253ee1193_carw_16x9x640.png?h=cba8663c46246a1629d71e5753c3404f 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/167a1d70-4aad-4ca0-9ba4-40f253ee1193_carw_16x9x1280.png?h=603feba455eada90394cd0cfc0394ab8 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/167a1d70-4aad-4ca0-9ba4-40f253ee1193_carw_16x9x1366.png?h=47e81d7c4e5647d3f05d4d445c4d148b 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/167a1d70-4aad-4ca0-9ba4-40f253ee1193_carw_16x9x1920.png?h=7a7122ca3c8d73923ef75309a60cdbc9 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/167a1d70-4aad-4ca0-9ba4-40f253ee1193_carw_16x9x2560.png?h=69c9943a78fcfefe9e4b84c31be13541 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/167a1d70-4aad-4ca0-9ba4-40f253ee1193_carw_16x9x5120.png?h=423199a7d5271818f29fe17946a5e05c 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Animate In</div>
+                              <div class="date">2020</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="toy-blast-volleyball-promo.html" data-context="pages" data-identity="id:p5ff19dc9ac629f966903e4d6e54f3be888e8eb2c5377d421c6b75">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/8a4fd593-e098-434b-b07b-d06c93892c92_rwc_0x305x1400x789x32.png?h=490f28121b39bf53812cf6fbd49aaac4" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/8a4fd593-e098-434b-b07b-d06c93892c92_rwc_0x305x1400x789x1400.png?h=70e9303b461b5d83d47fafd02d60b675" data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/8a4fd593-e098-434b-b07b-d06c93892c92_rwc_0x305x1400x789x640.png?h=48bd02cae8ed179525df423a79771f6b 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/8a4fd593-e098-434b-b07b-d06c93892c92_rwc_0x305x1400x789x1280.png?h=e043b866578296ba5b896610daf56419 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/8a4fd593-e098-434b-b07b-d06c93892c92_rwc_0x305x1400x789x1366.png?h=ae7314e24f309b11e90613ee9ebb7597 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/8a4fd593-e098-434b-b07b-d06c93892c92_rwc_0x305x1400x789x1400.png?h=70e9303b461b5d83d47fafd02d60b675 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/8a4fd593-e098-434b-b07b-d06c93892c92_rwc_0x305x1400x789x1400.png?h=70e9303b461b5d83d47fafd02d60b675 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/8a4fd593-e098-434b-b07b-d06c93892c92_rwc_0x305x1400x789x1400.png?h=70e9303b461b5d83d47fafd02d60b675 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Toy Blast Volleyball Promo</div>
+                              <div class="date">2021</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="rat-king.html" data-context="pages" data-identity="id:p5d2394314a6baabca4ba892ac5798f5776a661d57c42f7f1408c1">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/40d855c2-3f8f-4dc9-bb8d-fc93d4282c6d_carw_16x9x32.png?h=3fbb331201022aef2b147f262954d25e" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/40d855c2-3f8f-4dc9-bb8d-fc93d4282c6d_car_16x9.png?h=821fbf84ab26cfdd49d1c8390e7ca1de" data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/40d855c2-3f8f-4dc9-bb8d-fc93d4282c6d_carw_16x9x640.png?h=ce0a2bb5bcb9789118ca9790f7b7c39f 640w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/40d855c2-3f8f-4dc9-bb8d-fc93d4282c6d_carw_16x9x1280.png?h=dc1457beadf8a1a997b5ed4845b68be2 1280w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/40d855c2-3f8f-4dc9-bb8d-fc93d4282c6d_carw_16x9x1366.png?h=5b80624f83f88c73e5fe7ce1335feb2f 1366w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/40d855c2-3f8f-4dc9-bb8d-fc93d4282c6d_carw_16x9x1920.png?h=a1749c99a617304b1bc7a6ada7f24e06 1920w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/40d855c2-3f8f-4dc9-bb8d-fc93d4282c6d_carw_16x9x2560.png?h=f30bd3975aea18f17692f0190289b9b7 2560w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/40d855c2-3f8f-4dc9-bb8d-fc93d4282c6d_carw_16x9x5120.png?h=d6be211cc120a232f37a9e4cc82ea00c 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Rat King</div>
+                              <div class="date">2019</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="taps-aff.html" data-context="pages" data-identity="id:p5d25232ed32af4aa49efc442eddeb7f507be78b6b7f5172844fd2">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/7bb87a76-27bd-4be4-b691-ae422b1226a7_carw_16x9x32.jpg?h=7a84ba2d331a6e4f2229fd3fb40867b0" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/7bb87a76-27bd-4be4-b691-ae422b1226a7_car_16x9.jpg?h=8efd1ff0db43230ef061f3db2d1075a2" data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/7bb87a76-27bd-4be4-b691-ae422b1226a7_carw_16x9x640.jpg?h=6f149c2c0f31e8b7d1726713f77cb130 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/7bb87a76-27bd-4be4-b691-ae422b1226a7_carw_16x9x1280.jpg?h=7c8f7f02d46cbab4eb8a8381c9256df0 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/7bb87a76-27bd-4be4-b691-ae422b1226a7_carw_16x9x1366.jpg?h=a568686803c9811cff3301dc760efd3d 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/7bb87a76-27bd-4be4-b691-ae422b1226a7_carw_16x9x1920.jpg?h=107ca8fff38c384f8c6cfac8838e6371 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/7bb87a76-27bd-4be4-b691-ae422b1226a7_carw_16x9x2560.jpg?h=3ebadb646015dc1dd6a52bbb6961db2f 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/7bb87a76-27bd-4be4-b691-ae422b1226a7_carw_16x9x5120.jpg?h=adcc90552c65d4c8de2a2ffe0d0bdd8b 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Taps Aff</div>
+                              <div class="date">2019</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="anthropomorphic.html" data-context="pages" data-identity="id:p5d249a433c5ded178719adf55a8ab195d1d753d6c48ee9059fd4c">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy" src="85e2f5ac-77c9-4226-b454-ddb5d190ee8d/02c46c6c-8847-4d55-bc3a-a22b23033b37_carw_16x9x32.jpg?h=6def539617b307c7171ccfd0a979590d" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/02c46c6c-8847-4d55-bc3a-a22b23033b37_car_16x9.jpg?h=7e4576f28886f4a4104c8ca7f06892cd" data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/02c46c6c-8847-4d55-bc3a-a22b23033b37_carw_16x9x640.jpg?h=f47f7be336af3aec90df16e6382be1e7 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/02c46c6c-8847-4d55-bc3a-a22b23033b37_carw_16x9x1280.jpg?h=51f60750755034759a990cf3f181797d 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/02c46c6c-8847-4d55-bc3a-a22b23033b37_carw_16x9x1366.jpg?h=ffa1fa271c99aaad44c9aedf4210abf0 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/02c46c6c-8847-4d55-bc3a-a22b23033b37_carw_16x9x1920.jpg?h=e901e29c87e4edca275a6b8e74233435 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/02c46c6c-8847-4d55-bc3a-a22b23033b37_carw_16x9x2560.jpg?h=05d309bc93f4866566e97c45020f89c9 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/85e2f5ac-77c9-4226-b454-ddb5d190ee8d/02c46c6c-8847-4d55-bc3a-a22b23033b37_carw_16x9x5120.jpg?h=7037c5e8066f3157de89221b802dca1f 5120w" data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 2)">
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Anthropomorphic</div>
+                              <div class="date">2019</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+            </div>
+          </section>
+        <section class="back-to-top" data-hover-hint="backToTop">
+          <a href="#"><span class="arrow">&uarr;</span><span class="preserve-whitespace">Back to Top</span></a>
+        </section>
+        <a class="back-to-top-fixed js-back-to-top back-to-top-fixed-with-panel" data-hover-hint="backToTop" data-hover-hint-placement="top-start" href="#">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" class="icon icon-back-to-top">
+          <g>
+            <path d="M13.8,1.3L21.6,9c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4c-0.1,0.1-0.1,0.3-0.3,0.4
+              c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.3,0.1-0.4,0.1c-0.1,0-0.3,0-0.4-0.1c-0.2-0.1-0.3-0.2-0.4-0.3L14.2,5l0,19.1
+              c0,0.2-0.1,0.3-0.1,0.5c0,0.1-0.1,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.1,0.1-0.3,0.1-0.5,0.1c-0.1,0-0.3,0-0.4-0.1
+              c-0.1-0.1-0.3-0.1-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4c-0.1-0.1-0.1-0.3-0.1-0.5l0-19.1l-5.7,5.7C6,10.8,5.8,10.9,5.7,11
+              c-0.1,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3,0-0.4-0.1c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.1-0.2-0.2-0.4C4.1,10.2,4,10.1,4.1,9.9
+              c0-0.1,0-0.3,0.1-0.4c0-0.1,0.1-0.3,0.3-0.4l7.7-7.8c0.1,0,0.2-0.1,0.2-0.1c0,0,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.2-0.1
+              c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1C13.7,1.2,13.8,1.2,13.8,1.3z"></path>
+          </g>
+          </svg>
+        </a>
+  </div>
+        </main>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e7fb1b89a0","applicationID":"750147145","transactionName":"ZwZaYkJVDERXUxULCV5Me0NDQA1aGWsmJzJtQxdtS0QDQ14KT0gbbQ==","queueTime":0,"applicationTime":18,"atts":"S0FNFApPHxsUUUNYHU0e","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">
+  // fix for Safari's back/forward cache
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+  <script type="text/javascript">var __config__ = {"page_id":"p5f2a69e039bd3a0d63c26d2de9e7e6eacc0246a382ce01e79e0af","theme":{"name":"marta\/ludwig"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":true,"color":{"opacity":0.94,"hex":"#fff"}},"cookie_banner":{"enabled":false}};</script>
+  <script type="text/javascript" src="site/translations.js?cb="></script>
+  <script type="text/javascript" src="dist/js/main.js?cb="></script>
+</html>
